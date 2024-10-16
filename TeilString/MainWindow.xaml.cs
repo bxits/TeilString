@@ -63,6 +63,7 @@ namespace TeilString
             einzelTeile[0] = "Hallo";
 
             //Beachte immer, dass der Index bei 0 beginnt.
+            //Geht natürlich auch mit int, double, bool und allen anderen Datentypen.
         }
     }
 }
