@@ -30,11 +30,39 @@ namespace TeilString
             string textAusTextBox = txtEingabe.Text;
 
             //Zeichenkette (String) zerlegen anhand des Zeichens ','.
-            //Es wird ein sog. Array zurückgegeben.
+            //Beachte das Beispiel weiter unten in DemoStringSplit()
+            //Es wird ein sog. Array zurückgegeben. Beachte die []-Klammern am Datentyp!!!
             string[] stringTeile = textAusTextBox.Split(',');
 
             //Auf die einzelnen Elemente in stringTeile zugreifen.
             lblAusgabe.Content = stringTeile[0] + " ---" + stringTeile[1] + "---" + stringTeile[2];
+        }
+
+        private void DemoStringSplit()
+        {
+            //Beispiel:
+            //Gegebener String: "Das;ist;ein;Teilstring."
+            string vorgabe = "Das;ist;ein;Teilstring.";
+
+            //Die Split-Methode zerteilt "vorgabe".
+            //Es kommt also nicht ein einzelner String als Ergebnis heraus,
+            //sondern MEHRERE String. Das nennt man Array of Strings und
+            //muss so: string[] angelegt (deklariert) werden.
+            string[] einzelTeile = vorgabe.Split(';');
+
+            //Jetzt kann ich auf die einzelnen Elemente schreibend oder 
+            //lesend zugreifen.
+            //Hier als Beispiel die Ausgabe in einer MessageBox:
+            //Es wird das Wort "ein" ausgegeben.
+            MessageBox.Show(einzelTeile[2]);
+
+            //Aufgabe: Gibt die anderen Worte in einer MsgBox aus.
+            //...
+
+            //Jetzt überschreiben wir das Wort "Das" mit dem Wert "Hallo";
+            einzelTeile[0] = "Hallo";
+
+            //Beachte immer, dass der Index bei 0 beginnt.
         }
     }
 }
